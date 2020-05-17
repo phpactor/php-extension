@@ -11,25 +11,28 @@
     ],
 
     "require": {
-        "phpactor/container": "^1.0"
+        "phpactor/container": "^1.0",
+        "phpactor/file-path-resolver-extension": "^0.3.3",
+        "phpactor/logging-extension": "^0.3.3"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12.25",
         "phpunit/phpunit": "^9.1",
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpactor/test-utils": "^1.1"
     },
     "autoload": {
         "psr-4": {
-            "Phpactor\\Extension\\PhpExtension\\": "lib/"
+            "Phpactor\\Extension\\Php\\": "lib/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Phpactor\\Extension\\PhpExtension\\Tests\\": "tests/"
+            "Phpactor\\Extension\\Php\\Tests\\": "tests/"
         }
     },
     "extra": {
-        "phpactor.extension_class": "Phpactor\\Extension\\PhpExtension\\PhpExtensionExtension",
+        "phpactor.extension_class": "Phpactor\\Extension\\Php\\PhpExtensionExtension",
         "branch-alias": {
             "dev-master": "0.1.x-dev"
         }
