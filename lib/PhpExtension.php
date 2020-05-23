@@ -42,5 +42,12 @@ class PhpExtension implements Extension
         $schema->setDefaults([
             self::PARAM_VERSION => null
         ]);
+        $schema->setDescriptions([
+            self::PARAM_VERSION => <<<'EOT'
+Consider this value to be the project\'s version of PHP (e.g. `7.4`). If omitted
+it will check `composer.json` (by the configured platform then the PHP requirement) before
+falling back to the PHP version of the current process.
+EOT
+        ]);
     }
 }

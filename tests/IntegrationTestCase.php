@@ -12,4 +12,3 @@ class IntegrationTestCase extends TestCase
         return Workspace::create(__DIR__ . '/Workspace');
     }
 }
-
