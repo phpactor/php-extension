@@ -1,10 +1,8 @@
 {
     "name": "phpactor/php-extension",
+    "type": "phpactor-extension",
     "description": "Description about my project",
     "license": "MIT",
-    "type": "phpactor-extension",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "authors": [
         {
             "name": "daniel@dantleech.com",
@@ -18,10 +16,17 @@
         "phpactor/logging-extension": "^0.3.3"
     },
     "require-dev": {
+        "ergebnis/composer-normalize": "^2.0",
+        "friendsofphp/php-cs-fixer": "^2.17",
+        "phpactor/test-utils": "^1.1",
         "phpstan/phpstan": "~0.12.0",
-        "phpunit/phpunit": "^9.1",
-        "friendsofphp/php-cs-fixer": "^2.16",
-        "phpactor/test-utils": "^1.1"
+        "phpunit/phpunit": "^9.1"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        },
+        "phpactor.extension_class": "Phpactor\\Extension\\Php\\PhpExtensionExtension"
     },
     "autoload": {
         "psr-4": {
@@ -33,10 +38,6 @@
             "Phpactor\\Extension\\Php\\Tests\\": "tests/"
         }
     },
-    "extra": {
-        "phpactor.extension_class": "Phpactor\\Extension\\Php\\PhpExtensionExtension",
-        "branch-alias": {
-            "dev-master": "0.1.x-dev"
-        }
-    }
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
