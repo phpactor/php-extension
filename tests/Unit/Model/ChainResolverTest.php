@@ -9,13 +9,13 @@ use RuntimeException;
 
 class ChainResolverTest extends TestCase
 {
-    public function testThrowsExceptionIfNoVeresionCanBeResolved()
+    public function testThrowsExceptionIfNoVeresionCanBeResolved(): void
     {
         $this->expectException(RuntimeException::class);
         (new ChainResolver())->resolve();
     }
 
-    public function testResolvesVersion()
+    public function testResolvesVersion(): void
     {
         $resolver = $this->prophesize(PhpVersionResolver::class);
         $resolver->resolve()->willReturn('7.1');

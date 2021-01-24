@@ -10,7 +10,7 @@ use Phpactor\FilePathResolverExtension\FilePathResolverExtension;
 
 class PhpExtensionTest extends IntegrationTestCase
 {
-    public function testExtension()
+    public function testExtension(): void
     {
         $container = PhpactorContainer::fromExtensions([
             PhpExtension::class,
