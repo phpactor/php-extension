@@ -36,9 +36,19 @@ class ComposerPhpVersionResolver implements PhpVersionResolver
         }
 
         if (isset($json['require']['php'])) {
-            return preg_replace('/[^0-9.]/', '', $json['require']['php']);
+            return $this->resolveLowestVersion($json['require']['php']);
         }
 
         return null;
+    }
+
+    private function resolveLowestVersion(string $versionString): ?string
+    {
+        $versions = array_map(function (string $versionString) {
+            return preg_replace('/[^0-9.]/', '', trim($versionString));
+        }, (array)preg_split('{\|\|?}', $versionString));
+
+        sort($versions);
+        return reset($versions);
     }
 }
