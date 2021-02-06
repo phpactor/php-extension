@@ -49,6 +49,11 @@ class ComposerPhpVersionResolver implements PhpVersionResolver
         }, (array)preg_split('{\|\|?}', $versionString));
 
         sort($versions);
-        return reset($versions);
+
+        if (false === $version = reset($versions)) {
+            return $versionString;
+        }
+
+        return $version;
     }
 }
